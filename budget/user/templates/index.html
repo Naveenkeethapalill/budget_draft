@@ -1,0 +1,64 @@
+{% extends 'theme.html' %}
+{%load crispy_forms_tags %} 
+{% block content %}
+    <section id="budget">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="text-center display-4">income</h1>
+                </div>
+                <div class="col-md-6 mt-3" style="padding-top: -200px; margin-right: 300px;">
+                    <div class="budget-list text-center">
+                        <div class="budget-content border border-dark p-2 mb-2 d-flex justify-content-between">
+                            <div class="col-md-12" style="padding-bottom:0px;">
+                                <form method="POST" class="formOne">
+                                    {% csrf_token %}
+                                    {{ formOne|crispy }}
+                                    <!-- <button class="btn btn-warning" name="btn2">submit</button> -->
+                                    <input type="submit" class="btn btn-dark btn-block" name="btn1"  value="Submit"/>
+                                </form>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-warning">Update</a>
+                                <form action="#" method="POST" class="d-inline-block">
+                                    <input type="submit" class="btn btn-danger" value="Delete"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="exp" style="padding-left: 750px; margin-top: -240px; padding-right: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center display-4">expence</h1>
+                    </div>
+                    <div class="col-md-12 mt-3" style=" margin-right: 300px;">
+                        <div class="budget-list text-center">
+                            <div class="budget-content border border-dark p-2 mb-2 d-flex justify-content-between">
+                                <div class="col-md-12" style="padding-bottom:0px;">
+                                    <form method="POST" class="formTwo">
+                                        {% csrf_token %}
+                                        {{ formTwo|crispy }}
+                                        <!-- <button class="btn btn-warning" name="btn1">submit</button> -->
+                                        <input type="submit" class="btn btn-dark btn-block" name="btn2" value="Submit"/>
+                                    </form>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-warning">Update</a>
+                                    <form action="#" method="POST" class="d-inline-block">
+                                        <input type="submit" class="btn btn-danger" value="Delete"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  {% endblock %}
+
+
